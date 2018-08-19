@@ -37,7 +37,6 @@ function placeOrder(res) {
                 message: "What is the ID of the product you would like to purchase?",
                 validate: function (value) {
                     if (isNaN(value) === false) {
-                        //console.log("\n" + value);
                         return true;
                     }
                     console.log("\nYou did not enter a valid product ID. Please try again.");
@@ -51,7 +50,6 @@ function placeOrder(res) {
                 message: "What is the number of units you would like to purchase?",
                 validate: function (value) {
                     if (isNaN(value) === false) {
-                        //console.log("\n" + value);
                         return true;
                     }
                     console.log("\nYou did not enter a valid quantity. Please try again.");
@@ -64,16 +62,10 @@ function placeOrder(res) {
         .then(function (answer) {
             var orderQuantity = answer.quantity;
             var orderID = parseInt(answer.id) - 1;
-            var totalPrice = (parseFloat(answer.price * orderQuantity);
+            var totalPrice = (parseFloat(res[orderID].price * orderQuantity).toFixed(2));
             var stockQuantity = res[orderID].stock_quantity;
-            // console.log(orderID);
-            // console.log(orderQuantity);
-            // console.log(stockQuantity);
-            // console.log(res);
             if (orderQuantity < stockQuantity) {
-                connection.query(
-
-                    "UPDATE products SET ? WHERE ?",
+                connection.query("UPDATE products SET ? WHERE ?",
                     [
                         {
                             stock_quantity: stockQuantity - orderQuantity
