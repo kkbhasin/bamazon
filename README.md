@@ -1,4 +1,4 @@
-#Node.js & MySQL
+# Node.js & MySQL
 
 In this activity, we created an Amazon-like storefront with the MySQL skills learned this week. The app will take in orders from customers and deplete stock from the store's inventory. 
 
