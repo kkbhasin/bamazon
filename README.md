@@ -10,18 +10,6 @@ No preqrequisites required to run this app. Just open your browser and navigate 
 
 See above. No installation necessary. 
 
-## Running the tests
-
-N/A
-
-## Break down into end to end tests
-
-N/A
-
-## And coding style tests
-
-N/A
-
 ## Deployment
 
 N/A
